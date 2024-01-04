@@ -1,0 +1,19 @@
+package com.onefin.ewallet.common.base.errorhandler;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+import com.onefin.ewallet.common.base.constants.OneFinConstants;
+
+@ResponseStatus(value = HttpStatus.CONFLICT, reason = OneFinConstants.CONN_CONFLICT)
+public class RuntimeConflictException extends RuntimeException {
+	private static final long serialVersionUID = 1L;
+
+	public RuntimeConflictException() {
+		super(OneFinConstants.CONN_CONFLICT);
+	}
+
+	public RuntimeConflictException(String cause) {
+		super(cause);
+	}
+}

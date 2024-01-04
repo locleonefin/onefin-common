@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.onefin.ewallet.common</groupId>
+	<artifactId>common-utility</artifactId>
+	<version>1.0.1</version>
+	<name>Ewallet Common Utility</name>
+
+	<parent>
+		<groupId>com.onefin.ewallet</groupId>
+		<artifactId>conn-ewallet-common</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<properties>
+		<jackson-databind.version>2.6.3</jackson-databind.version>
+		<jackson-dataformat-xml.version>2.6.3</jackson-dataformat-xml.version>
+		<spring-boot-starter-hateoas.version>1.2.2.RELEASE</spring-boot-starter-hateoas.version>
+		
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson-databind.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>${jackson-dataformat-xml.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+			<version>${spring-boot-starter-hateoas.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.2</version>
+		</dependency>
+	
+
+		<!-- POI, Excel Lib -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-math3</artifactId>
+			<version>3.6.1</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>main</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skipTests>true</skipTests>
+					<encoding>UTF-8</encoding>
+					<!--                    <source>${maven.compiler.source}</source>-->
+					<!--                    <target>${maven.compiler.target}</target>-->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

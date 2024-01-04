@@ -1,0 +1,98 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.onefin.ewallet.common</groupId>
+	<artifactId>common-base</artifactId>
+	<version>1.0.1</version>
+	<name>Ewallet Common Base</name>
+
+	<parent>
+		<groupId>com.onefin.ewallet</groupId>
+		<artifactId>conn-ewallet-common</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<properties>
+		<common-codes.version>1.9</common-codes.version>
+		<common-utility.version>1.0.1</common-utility.version>
+		<common-domain.version>1.0.1</common-domain.version>
+		<common-io.version>2.6</common-io.version>
+		<minio.version>8.2.2</minio.version>
+		<springfox.swagger.version>3.0.0</springfox.swagger.version>
+		<springfox-boot-starter.version>3.0.0</springfox-boot-starter.version>
+		<springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
+		<rsql-parser.version>2.1.0</rsql-parser.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>${common-codes.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${common-io.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.onefin.ewallet.common</groupId>
+			<artifactId>common-utility</artifactId>
+			<version>${common-utility.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.onefin.ewallet.common</groupId>
+			<artifactId>common-domain</artifactId>
+			<version>${common-domain.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.minio</groupId>
+			<artifactId>minio</artifactId>
+			<version>${minio.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${springfox.swagger.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>${springfox-boot-starter.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox-swagger-ui.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+		<!--		https://github.com/jirutka/rsql-parser-->
+		<dependency>
+			<groupId>cz.jirutka.rsql</groupId>
+			<artifactId>rsql-parser</artifactId>
+			<version>${rsql-parser.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>main</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skipTests>true</skipTests>
+					<encoding>UTF-8</encoding>
+					<!--					<source>${maven.compiler.source}</source>-->
+					<!--					<target>${maven.compiler.target}</target>-->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
